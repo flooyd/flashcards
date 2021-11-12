@@ -2,6 +2,7 @@
   import LoginModal from "./LoginModal.svelte";
 
   import modals from "../stores/modals";
+  import user from "../stores/user";
   const handleClickLogin = () => {
     $modals.loginModal.show = true;
     console.log("hi");
@@ -11,8 +12,11 @@
 <nav>
   <div class="title">Flashcards</div>
   <div class="options">
-    {#if !$modals.loginModal.show}
+    {#if !$modals.loginModal.show && !$user.auth}
       <div on:click={handleClickLogin}>Login</div>
+    {/if}
+    {#if $user.auth}
+      <div class="user">Logged in as: {$user.username}</div>
     {/if}
     <div>About</div>
   </div>
