@@ -1,6 +1,7 @@
 * {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   line-height: 25px;
+  color: #333;
 }
 
 body {
@@ -17,11 +18,12 @@ body {
 
 .modal {
   position: absolute;
-  width: calc(100vw - 60px);
-  height: 400px;
-  top: 122px;
-  left: 20px;
-  background:whitesmoke;;
+  min-width: 480px;
+  min-height: 270px;
+  left: 50%;
+  top: 25%;
+  transform: translate(-50%, -25%);
+  background: whitesmoke;
   border: 1px solid blue;
   padding: 10px;
 }
