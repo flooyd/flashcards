@@ -1,4 +1,5 @@
 <script lang="ts">
+  //components
   import LoginModal from "./components/LoginModal.svelte";
   import Navbar from "./components/Navbar.svelte";
 

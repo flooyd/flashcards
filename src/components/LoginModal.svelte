@@ -1,6 +1,7 @@
 <script>
-  import modals from '../stores/modals';
-import user from '../stores/user';
+  //stores
+  import modals from "../stores/modals";
+  import user from "../stores/user";
 
   const handleClickOutside = () => {
     $modals.loginModal.show = false;
@@ -8,22 +9,23 @@ import user from '../stores/user';
   };
 </script>
 
-<div class='modalBackground' on:click={handleClickOutside} />
-<div class='modal'>
+<div class="modalBackground" on:click={handleClickOutside} />
+<div class="modal">
   <div>
-    <div class='title'>Login</div>
-    <div class="message">Logging in for the first time will create your account...</div>
+    <div class="title">Login</div>
+    <div class="message">
+      Logging in for the first time will create your account...
+    </div>
   </div>
-  <div class='fields'>
-    <label for='username'>Username</label>
-    <input type='text' name='username' />
-    <label for='username'>Password</label>
-    <input type='text' name='password' />
+  <div class="fields">
+    <label for="username">Username</label>
+    <input type="text" name="username" />
+    <label for="username">Password</label>
+    <input type="text" name="password" />
   </div>
-  <div class='buttons'>
+  <div class="buttons">
     <button on:click={handleClickOutside}>Cancel</button>
     <button>Login</button>
-    
   </div>
 </div>
 
