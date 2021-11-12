@@ -1,7 +1,31 @@
 * {
   font-family: 'Open Sans', sans-serif;
+  line-height: 25px;
 }
 
 body {
   margin: 0px;
+}
+
+.modalBackground {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(51, 51, 51, 0.4);
+}
+
+.modal {
+  position: absolute;
+  width: calc(100vw - 60px);
+  height: 400px;
+  top: 122px;
+  left: 20px;
+  background:whitesmoke;;
+  border: 1px solid blue;
+  padding: 10px;
+}
+
+.title {
+  font-size: 20px;
 }

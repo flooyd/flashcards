@@ -1,11 +1,19 @@
 <script>
+  import LoginModal from "./LoginModal.svelte";
 
+  import modals from "../stores/modals";
+  const handleClickLogin = () => {
+    $modals.loginModal.show = true;
+    console.log("hi");
+  };
 </script>
 
 <nav>
   <div class="title">Flashcards</div>
   <div class="options">
-    <div>Login/Register</div>
+    {#if !$modals.loginModal.show}
+      <div on:click={handleClickLogin}>Login</div>
+    {/if}
     <div>About</div>
   </div>
 </nav>
@@ -18,7 +26,7 @@
     justify-content: space-between;
     background: lightblue;
     padding: 8px 20px;
-    border-bottom: 1px solid rgba(0,0,255,.5);
+    border-bottom: 1px solid rgba(0, 0, 255, 0.5);
   }
 
   .title {
