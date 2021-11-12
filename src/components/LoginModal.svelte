@@ -1,8 +1,10 @@
 <script>
   import modals from '../stores/modals';
+import user from '../stores/user';
 
   const handleClickOutside = () => {
     $modals.loginModal.show = false;
+    $user.auth = true;
   };
 </script>
 

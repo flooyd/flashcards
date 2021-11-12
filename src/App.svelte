@@ -1,18 +1,24 @@
 <script lang="ts">
-import LoginModal from "./components/LoginModal.svelte";
-import Navbar from "./components/Navbar.svelte";
+  import LoginModal from "./components/LoginModal.svelte";
+  import Navbar from "./components/Navbar.svelte";
 
-//stores
-import modals from './stores/modals';
+  //stores
+  import modals from "./stores/modals";
+  import user from "./stores/user";
 </script>
 
 <main>
-	<Navbar/>
+  <Navbar />
   {#if $modals.loginModal.show}
-     <LoginModal/>
+    <LoginModal />
   {/if}
-  <div>There will be flashcards here soon.</div>
-  <div>Maybe even some decks full of flashcards...</div>
+  {#if $user.auth}
+    <div>Show Stuff...</div>
+  {/if}
+  {#if !$user.auth}
+    <div>There will be flashcards here soon.</div>
+    <div>Maybe even some decks full of flashcards...</div>
+  {/if}
 </main>
 
 <style>
