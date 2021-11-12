@@ -19,7 +19,4 @@ import modals from './stores/modals';
   div {
     margin: 10px 20px;
   }
-  .login {
-    font-weight: bold;
-  }
 </style>
