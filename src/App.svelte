@@ -24,6 +24,6 @@
 
 <style>
   div {
-    margin: 10px 20px;
+    margin: 20px 20px;
   }
 </style>

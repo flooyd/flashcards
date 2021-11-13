@@ -5,7 +5,6 @@
   
   const handleClickLogin = () => {
     $modals.loginModal.show = true;
-    console.log("hi");
   };
 </script>
 
@@ -13,7 +12,7 @@
   <div class="title">Flashcards</div>
   <div class="options">
     {#if !$user.auth}
-      <div on:click={handleClickLogin}>Login</div>
+      <div on:click={handleClickLogin}>Login/Register</div>
     {/if}
     {#if $user.auth}
       <div>Logged in as: {$user.username}</div>
@@ -29,8 +28,9 @@
     font-size: 20px;
     justify-content: space-between;
     background: lightblue;
-    padding: 8px 20px;
+    padding: 10px 20px;
     border-bottom: 1px solid rgba(0, 0, 255, 0.5);
+    line-height: 25px;
   }
 
   .title {

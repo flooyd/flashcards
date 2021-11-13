@@ -1,6 +1,6 @@
 * {
   font-family: "Open Sans", sans-serif;
-  line-height: 25px;
+  line-height: 20px;
   color: #333;
 }
 
@@ -18,8 +18,8 @@ body {
 
 .modal {
   position: absolute;
-  min-width: 480px;
-  min-height: 270px;
+  min-width: 250px;
+  min-height: 250px;
   left: 50%;
   top: 25%;
   transform: translate(-50%, -25%);
