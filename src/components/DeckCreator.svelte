@@ -1,9 +1,32 @@
 <script>
+import selectedDeck from "../stores/selectedDeck";
+
+import user from "../stores/user";
+
+
   let name = "";
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log("hi");
+    try {
+      const response = await fetch("http://localhost:5001/api/decks", {
+        method: "POST",
+        body: JSON.stringify({ name }),
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `bearer ${$user.token}`
+        },
+      });
+      if(response.status === 200) {
+        const json = await response.json();
+        $selectedDeck.name = json.name;
+        $selectedDeck.id = json.id;
+      } else {
+        console.log('unique error?')
+      }
+    } catch (err) {
+      console.log(err);
+    }
   };
 </script>
 
