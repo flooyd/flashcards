@@ -2,6 +2,7 @@
   font-family: "Open Sans", sans-serif;
   line-height: 20px;
   color: #333;
+  box-sizing: border-box;
 }
 
 body {
@@ -18,15 +19,14 @@ body {
 
 .modal {
   position: absolute;
-  width: 300px;
-  min-height: 250px;
+  width: 400px;
+  height: 300px;
   left: 50%;
   top: 25%;
   transform: translate(-50%, -25%);
-  background: whitesmoke;
+  background: white;
   border: 1px solid blue;
   padding: 10px;
-  margin: 0px 20px;
 }
 
 .title {
@@ -38,9 +38,17 @@ button {
   border: 1px solid #333;
   cursor: pointer;
   padding: 0px 8px;
+  height: 30px;
 }
 
 button:hover {
   color: white;
   background: blue;
+}
+
+input {
+  border: 1px solid #333;
+  padding: 4px;
+  width: 300px;
+  height: 30px;
 }

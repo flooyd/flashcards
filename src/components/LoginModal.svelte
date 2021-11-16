@@ -180,13 +180,11 @@
   input {
     max-width: 300px;
     margin: 5px 0px;
-    border: 1px solid #333;
-    padding: 8px;
   }
 
   .buttons {
     text-align: right;
-    height: 22px;
+    height: 30px;
   }
 
   button {
