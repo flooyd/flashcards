@@ -1,8 +1,8 @@
 import { writable } from 'svelte/store';
 
 const user = writable({
-  auth: false,
   username: null,
+  token: null
 });
 
 user.subscribe((value) => value);

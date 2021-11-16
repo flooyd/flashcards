@@ -6,16 +6,23 @@
   const handleClickLogin = () => {
     $modals.loginModal.show = true;
   };
+
+  const handleClickUsername = () => {
+    $user.token = null
+    $user.username = null;
+    localStorage.removeItem('token');
+    localStorage.removeItem('username');
+  }
 </script>
 
 <nav>
   <div class="title">Flashcards</div>
   <div class="options">
-    {#if !$user.auth}
+    {#if !$user.token}
       <div on:click={handleClickLogin}>Login/Register</div>
     {/if}
-    {#if $user.auth}
-      <div>Logged in as: {$user.username}</div>
+    {#if $user.token}
+      <div class="username" on:click={handleClickUsername}>{$user.username}</div>
     {/if}
     <div>About</div>
   </div>
@@ -41,6 +48,10 @@
   .options {
     display: flex;
     align-items: center;
+  }
+
+  .username {
+    color: white;
   }
 
   .options div {

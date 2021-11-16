@@ -18,7 +18,7 @@ body {
 
 .modal {
   position: absolute;
-  min-width: 250px;
+  width: 300px;
   min-height: 250px;
   left: 50%;
   top: 25%;
@@ -26,8 +26,21 @@ body {
   background: whitesmoke;
   border: 1px solid blue;
   padding: 10px;
+  margin: 0px 20px;
 }
 
 .title {
   font-size: 20px;
+}
+
+button {
+  background: white;
+  border: 1px solid #333;
+  cursor: pointer;
+  padding: 0px 8px;
+}
+
+button:hover {
+  color: white;
+  background: blue;
 }

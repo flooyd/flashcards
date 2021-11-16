@@ -1,11 +1,22 @@
 <script lang="ts">
+  //svelte
+  import { onMount } from "svelte";
+
   //components
+  import DeckHeader from "./components/DeckHeader.svelte";
   import LoginModal from "./components/LoginModal.svelte";
   import Navbar from "./components/Navbar.svelte";
 
   //stores
   import modals from "./stores/modals";
   import user from "./stores/user";
+
+  onMount(() => {
+    if(localStorage.getItem('token')) {
+      $user.token = localStorage.getItem('token')
+      $user.username = localStorage.getItem('username');
+    }
+  })
 </script>
 
 <main>
@@ -13,10 +24,10 @@
   {#if $modals.loginModal.show}
     <LoginModal />
   {/if}
-  {#if $user.auth}
-    <div>Show Stuff...</div>
+  {#if $user.token}
+    <DeckHeader />
   {/if}
-  {#if !$user.auth}
+  {#if !$user.token}
     <div>There will be flashcards here soon.</div>
     <div>Maybe even some decks full of flashcards...</div>
   {/if}
