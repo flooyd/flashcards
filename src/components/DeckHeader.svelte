@@ -1,17 +1,39 @@
 <script>
+  import { onMount } from "svelte";
+
+  import user from "../stores/user";
+
   import selectedDeck from "../stores/selectedDeck";
   import DeckSelector from "./DeckSelector.svelte";
+
+  let decks = [];
+
+  onMount(async () => {
+    try {
+      const response = await fetch("http://localhost:5001/api/decks", {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `bearer ${$user.token}`,
+      },
+    });
+      const json = await response.json();
+      console.log(json);
+    } catch (err) {
+      console.log(err)
+    }
+  });
 </script>
 
 <div class="deckHeader">
   <div class="title">
     {#if $selectedDeck.name}
-      {$selectedDeck.name}
+      <div>{$selectedDeck.name} - {$selectedDeck.cards.length} cards</div>
+      <button>Add Card</button>
     {:else}
       Please select a deck
     {/if}
   </div>
-  <DeckSelector/>
+  <DeckSelector />
 </div>
 
 <style>
@@ -24,5 +46,11 @@
 
   .title {
     font-size: 20px;
+    display: flex;
+    align-items: center;
+  }
+
+  button {
+    margin-left: 8px;
   }
 </style>

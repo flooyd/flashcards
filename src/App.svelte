@@ -26,10 +26,10 @@ import DeckCreator from "./components/DeckCreator.svelte";
   {#if $modals.loginModal.show}
     <LoginModal />
   {/if}
-  {#if $user.token && !$createMode.creating}
+  {#if $user.token && $createMode === ''}
     <DeckHeader />
   {/if}
-  {#if $createMode.creating && $createMode.mode === 'deck'}
+  {#if $createMode === 'deck'}
      <DeckCreator/>
   {/if}
   {#if !$user.token}

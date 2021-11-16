@@ -2,8 +2,7 @@
   import createMode from "../stores/createMode";
 
   const handleClickCreate = () => {
-    $createMode.creating = true;
-    $createMode.mode = 'deck'
+    $createMode = 'deck';
   };
 </script>
 

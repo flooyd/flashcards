@@ -1,14 +1,6 @@
 import { writable } from 'svelte/store';
 
-type createMode = {
-  creating: boolean;
-  mode: 'deck' | 'card' | '';
-}
-
-const createMode = writable<createMode>({
-  creating: false,
-  mode: ''
-});
+const createMode = writable('');
 
 createMode.subscribe((value) => value);
 
