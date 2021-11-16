@@ -36,7 +36,7 @@
     justify-content: space-between;
     background: lightblue;
     padding: 10px 20px;
-    border-bottom: 1px solid rgba(0, 0, 255, 0.5);
+    box-shadow: 0 -0.4rem 0.9rem 0.2rem #00000080;
     line-height: 25px;
   }
 
