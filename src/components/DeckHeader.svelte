@@ -17,7 +17,7 @@
       },
     });
       const json = await response.json();
-      console.log(json);
+      decks = json;
     } catch (err) {
       console.log(err)
     }
@@ -33,7 +33,7 @@
       Please select a deck
     {/if}
   </div>
-  <DeckSelector />
+  <DeckSelector decks={decks} />
 </div>
 
 <style>
